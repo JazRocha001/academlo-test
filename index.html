@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Login and signup container -->
+    <div class="login-container" id="login-signup">
+      <div class="segment-buttons">
+        <button class="btn active btn__login">Iniciar Sesión</button>
+        <button class="btn btn__signup">Registrarte</button>
+      </div>
+      <div class="body-container">
+        <!-- Login form -->
+        <div id="login-form">
+          <h1>Iniciar Sesión</h1>
+
+          <div class="input-container">
+            <label class="input__label"> Correo electronico:</label>
+            <input
+              placeholder="Escribe tu correo electronico"
+              class="input"
+              id="login__email"
+              type="text"
+            />
+          </div>
+
+          <div class="input-container">
+            <label class="input__label">Contraseña:</label>
+
+            <div class="input-icon-container">
+              <input
+                id="login__password"
+                placeholder="Almenos 8 caracteres"
+                class="input"
+                type="password"
+              />
+              <img class="see" src="img/Component1.svg" alt="hidden-icon" />
+            </div>
+          </div>
+
+          <p class="subTexto">Olvide mi contraseña</p>
+        </div>
+        <!-- Signup form -->
+        <div id="signup-form" class="hidden">
+          <h1>Registro</h1>
+          <div class="input-container">
+            <label class="input__label">Nombre:</label>
+            <input
+              id="signup__name"
+              placeholder="Escribe tu Nombre"
+              class="input"
+              type="text"
+            />
+          </div>
+          <div class="input-container">
+            <label class="input__label">Apellido:</label>
+            <input
+              id="signup__lastName"
+              placeholder="Escribe tu Apellido"
+              class="input"
+              type="text"
+            />
+          </div>
+          <div class="input-container">
+            <label class="input__label">Correo Electronico:</label>
+            <input
+              id="signup__email"
+              placeholder="Escribe tu correo electronico"
+              class="input"
+              type="text"
+            />
+          </div>
+          <div class="input-container">
+            <label class="input__label">Contraseña:</label>
+            <div class="input-icon-container">
+              <input
+                id="signup__password"
+                placeholder="Almenos 8 caracteres"
+                class="input"
+                type="password"
+              />
+              <img src="img/Component1.svg" alt="hidden-icon" />
+            </div>
+          </div>
+          <div class="input-container">
+            <label class="input__label">Confirmar contraseña:</label>
+            <div class="input-icon-container">
+              <input
+                id="signup__password--confirm"
+                placeholder="Almenos 8 caracteres"
+                class="input"
+                type="password"
+              />
+              <img src="img/Component1.svg" alt="hidden-icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="space-top">
+        <button id="btn-accept" class="btn-green-accept">Aceptar</button>
+      </div>
+    </div>
+
+    <!-- Home tasks container -->
+    <div class="home-container hidden" id="home-task">
+      <div class="profile-container">
+        <img class="profile-icon" src="img/user1.svg" alt="Profile icon" />
+      </div>
+
+      <!-- Header container -->
+      <div class="header-container">
+        <h1 class="home-title">Tareas</h1>
+
+        <div class="nav__actions">
+          <div class="input-icon-container">
+            <img src="img/Search1.svg" alt="hidden-icon" />
+            <input class="task-search" placeholder="Buscar tarea" type="text" />
+          </div>
+
+          <button class="btn__add-task active">Crear nueva tarea</button>
+        </div>
+      </div>
+      <!-- Tasks container -->
+      <div class="tasks-container task__container">
+        <!-- Task card -->
+      </div>
+    </div>
+    <!-- Add modal -->
+    <div class="hidden" id="task-modal">
+      <div class="modal__container">
+        <div class="modal__header">
+          <img
+            class="btn-close"
+            id="close__modal"
+            src="img/x2.svg"
+            alt="close"
+          />
+          <h2 class="title-space">Agregar Tarea</h2>
+        </div>
+        <div class="modal__body">
+          <div class="task-name">
+            <label for="">Nombre de la Tarea</label>
+            <input
+              id="name__new-task"
+              type="text"
+              placeholder="Escribe el nombre de la tarea"
+            />
+          </div>
+          <div class="task-description">
+            <label for="">Descripcion:</label>
+            <textarea
+              name=""
+              id="description__new-task"
+              cols="30"
+              rows="10"
+              class="input-description"
+              type="text"
+              placeholder="Descripcion de la tarea"
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal__footer">
+          <button id="btn__modal-cancel" class="btn-grey">Cancelar</button>
+          <button class="btn-green" id="guardar__new-task">
+            Guardar cambios
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit modal -->
+    <div class="hidden" id="edit-task-modal">
+      <div class="modal__container">
+        <div class="modal__header">
+          <img
+            class="btn-close"
+            id="close__edit-modal"
+            src="img/x2.svg"
+            alt="close"
+          />
+          <h2 class="title-space">Editar Tarea</h2>
+        </div>
+        <div class="modal__body">
+          <div class="task-name">
+            <label for="">Nombre de la Tarea</label>
+            <input
+              id="name__edit-task"
+              type="text"
+              placeholder="Escribe el nombre de la tarea"
+            />
+          </div>
+          <div class="task-description">
+            <label for="">Descripcion:</label>
+            <textarea
+              name=""
+              id="description__edit-task"
+              cols="30"
+              rows="10"
+              class="input-description"
+              type="text"
+              placeholder="Descripcion de la tarea"
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal__footer">
+          <button id="btn__edit-modal-cancel" class="btn-grey">Cancelar</button>
+          <button class="btn-green" data-id="" id="save__edit-task">
+            Guardar cambios
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</html>
